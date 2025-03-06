@@ -1,9 +1,26 @@
-import React from 'react'
+import { useState } from "react";
+import AddTransaction from "./AddTransaction";
 
 const ExpenseTracker = () => {
-  return (
-    <div>ExpenseTracker</div>
-  )
-}
+  const [transactions, setTransactions] = useState([]);
 
-export default ExpenseTracker
+  const addTransaction = (transaction) => {
+    setTransactions([...transactions, transaction]);
+  };
+
+  return (
+    <div>
+      <h2>Expense Tracker</h2>
+      <AddTransaction onAdd={addTransaction} />
+      <ul>
+        {transactions.map((transaction) => (
+          <li key={transaction.id}>
+            {transaction.text} - ${transaction.amount} ({transaction.type})
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ExpenseTracker;

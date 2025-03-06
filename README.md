@@ -5,18 +5,20 @@ A simple **React.js Expense Tracker** that helps users track their income and ex
 ---
 
 ## 📜 Project Structure
- 📂 src
- ┣ 📂 components
- ┃ ┣ 📄 ExpenseTracker.jsx
- ┃ ┣ 📄 TransactionList.jsx
- ┃ ┣ 📄 AddTransaction.jsx
- ┃ ┣ 📄 Balance.jsx
- ┃ 📄 App.js
- ┃ 📄 index.js
- ┃ 📄 App.css
- ┃ 📄 index.css
+
+📂 src
+┣ 📂 components
+┃ ┣ 📄 ExpenseTracker.jsx
+┃ ┣ 📄 TransactionList.jsx
+┃ ┣ 📄 AddTransaction.jsx
+┃ ┣ 📄 Balance.jsx
+┣ 📄 App.js
+┣ 📄 index.js
+┣ 📄 App.css
+┣ 📄 index.css
 📄 README.md
 
+---
 
 ## 📌 Features (Planned)
 
@@ -49,7 +51,13 @@ cd expense-tracker
 
 ```
 ### 2️⃣ Install Dependencies
-``` npm install ```
+``` bash
+ npm install 
+ 
+```
 
 ### 3️⃣ Run the App
-``` npm Start ```
+``` bash 
+npm Start 
+
+```
