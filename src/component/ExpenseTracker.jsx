@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddTransaction from "./AddTransaction";
+import Balance from "./Balance";
 
 const ExpenseTracker = () => {
   const [transactions, setTransactions] = useState([]);
@@ -11,6 +12,7 @@ const ExpenseTracker = () => {
   return (
     <div>
       <h2>Expense Tracker</h2>
+      <Balance transactions={transactions}/>
       <AddTransaction onAdd={addTransaction} />
       <ul>
         {transactions.map((transaction) => (
