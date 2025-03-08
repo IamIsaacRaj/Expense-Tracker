@@ -2,10 +2,20 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const transactionRoutes = require("./routes/transactionRoutes");
+
 
 const app = express();
 app.use(cors());
 app.use(express.json()); // Allows JSON requests
+
+// Connect Route
+app.use("/api/transactions",transactionRoutes);
+
+// Default Route
+app.get("/", (req, res) => {
+  res.send("Welcome to the Expense Tracker API!");
+});
 
 // MongoDB Connection
 mongoose
@@ -15,11 +25,6 @@ mongoose
   })
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
-
-// Default Route
-app.get("/", (req, res) => {
-  res.send("Welcome to the Expense Tracker API!");
-});
 
 // Start Server
 const PORT = process.env.PORT || 5000;
