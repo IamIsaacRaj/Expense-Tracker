@@ -6,6 +6,7 @@ A simple **React.js Expense Tracker** that helps users track their income and ex
 
 ## 📜 Project Structure
 
+```
 📂 src
 ┣ 📂 components
 ┃ ┣ 📄 ExpenseTracker.jsx
@@ -17,6 +18,7 @@ A simple **React.js Expense Tracker** that helps users track their income and ex
 ┣ 📄 App.css
 ┣ 📄 index.css
 📄 README.md
+```
 
 ---
 
@@ -50,14 +52,17 @@ git clone https://github.com/your-username/expense-tracker.git
 cd expense-tracker
 
 ```
+
 ### 2️⃣ Install Dependencies
-``` bash
- npm install 
- 
+
+```bash
+ npm install
+
 ```
 
 ### 3️⃣ Run the App
-``` bash 
-npm Start 
+
+```bash
+npm Start
 
 ```

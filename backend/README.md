@@ -4,30 +4,20 @@ This is the **backend** for the Expense Tracker application, built with **Node.j
 
 📂 Folder Structure
 
+``` Project
 📂 backend
-
  ┣ 📂 node_modules
-
  ┣ 📂 models
-
     ┣ 📄 Transaction.js
-
  ┣ 📂 routes
-
     ┣ 📄 transactionRoutes.js
-
- ┣ 📄 package.json
-
- ┣ 📄 package-lock.json
-
- ┣ 📄 .gitignore
-
- ┣ 📄 .env
- 
  ┣ 📄 server.js
-
+ ┣ 📄 package.json
+ ┣ 📄 package-lock.json
+ ┣ 📄 .gitignore
+ ┣ 📄 .env
  ┣ 📄 README.md
-
+```
  ---
 
 
