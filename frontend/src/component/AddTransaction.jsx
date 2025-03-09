@@ -5,6 +5,7 @@ const AddTransaction = ({ onAdd }) => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("expense");
+  const [paymentMethod, setPaymentMethod] = useState("Cash");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -15,13 +16,15 @@ const AddTransaction = ({ onAdd }) => {
       text,
       amount: Number(amount),
       type,
+      paymentMethod,
     };
-
+    console.log("Sending transaction:", newTransaction); // ✅ Debugging log
     try {
       const response = await axios.post(
         "http://localhost:5000/api/transactions",
         newTransaction
       );
+      console.log("Response:", response.data); // ✅ Debugging log
       onAdd(response.data); // Update state with the saved transaction
     } catch (error) {
       console.log("Error adding transaction: ", error);
@@ -29,6 +32,7 @@ const AddTransaction = ({ onAdd }) => {
     setText("");
     setAmount("");
     setType("expense"); // Reset the form
+    setPaymentMethod("Cash");
   };
 
   return (
@@ -50,6 +54,15 @@ const AddTransaction = ({ onAdd }) => {
         <select value={type} onChange={(e) => setType(e.target.value)}>
           <option value="expense">Expense</option>
           <option value="income">Income</option>
+        </select>
+        <select
+          value={paymentMethod}
+          onChange={(e) => setPaymentMethod(e.target.value)}
+        >
+          <option value="Cash">Cash</option>
+          <option value="UPI">UPI</option>
+          <option value="Card">Card</option>
+          <option value="Bank Transfer">Bank Transfer</option>
         </select>
         <button type="submit">Add Transaction</button>
       </form>

@@ -26,8 +26,12 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const { text, amount, type } = req.body;
-    const transaction = new Transaction({ text, amount, type });
+    const { text, amount, type, paymentMethod } = req.body;
+    if (!text || !amount || !type || !paymentMethod) {
+      return res.status(400).json({ error: "All fields are required" });
+    }
+
+    const transaction = new Transaction({ text, amount, type, paymentMethod });
     await transaction.save();
     res.status(201).json(transaction);
   } catch (error) {

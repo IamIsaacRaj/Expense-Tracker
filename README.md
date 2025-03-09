@@ -55,7 +55,7 @@ npm run dev
 
 ```bash
 cd frontend
-npm Start
+npm start
 
 ```
 
