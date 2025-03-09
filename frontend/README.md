@@ -27,7 +27,14 @@ A simple **React.js Expense Tracker** that helps users track their income and ex
 ✅ **Add Transactions (Income & Expenses)**  
 ✅ **View Transaction History**  
 ✅ **Calculate Total Balance**  
-✅ **Filter & Sort Transactions (Latest, High-Low, Low-High)**  
+✅ **Persistent Data with MongoDB**     
+✅ **Advanced Filtering:**
+- Filter by **income** or **expense**
+- Date Range Selection 📅
+- Filter by Month & Year 🗓
+- Filter by Payment Method 💳 (Cash, UPI, Card, Bank Transfer)
+- Sort Transactions: Latest, High-Low, Low-High
+
 ✅ **Connected to MongoDB Backend**  
 ✅ **TailwindCSS for Styling (Upcoming)**
 
