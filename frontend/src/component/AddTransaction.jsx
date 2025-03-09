@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 
 const AddTransaction = ({ onAdd }) => {
@@ -5,19 +6,26 @@ const AddTransaction = ({ onAdd }) => {
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("expense");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!text || !amount) return;
 
     // Create a new transaction object
     const newTransaction = {
-      id: Date.now(),
       text,
-      amount: parseFloat(amount),
+      amount: Number(amount),
       type,
     };
 
-    onAdd(newTransaction); // Pass new transaction to parent component
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/transactions",
+        newTransaction
+      );
+      onAdd(response.data); // Update state with the saved transaction
+    } catch (error) {
+      console.log("Error adding transaction: ", error);
+    }
     setText("");
     setAmount("");
     setType("expense"); // Reset the form
