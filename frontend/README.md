@@ -27,18 +27,20 @@ A simple **React.js Expense Tracker** that helps users track their income and ex
 ✅ **Add Transactions (Income & Expenses)**  
 ✅ **View Transaction History**  
 ✅ **Calculate Total Balance**  
-✅ **Local Storage Support (Persistent Data)**  
-✅ **TailwindCSS for Styling**
+✅ **Filter & Sort Transactions (Latest, High-Low, Low-High)**  
+✅ **Connected to MongoDB Backend**  
+✅ **TailwindCSS for Styling (Upcoming)**
 
 ---
 
 ## 🛠️ Technologies Used
 
 - React.js ⚛️
-- useState & useEffect (React Hooks)
+- Node.js & Express (Backend)
+- MongoDB & Mongoose
+- Axios for API Requests
 - JavaScript (ES6+)
-- Local Storage (for data persistence)
-- TailwindCSS (for UI styling - upcoming)
+- TailwindCSS (Upcoming)
 
 ---
 
@@ -60,9 +62,20 @@ cd expense-tracker
 
 ```
 
-### 3️⃣ Run the App
+### 3️⃣ Start the Backend
 
 ```bash
+cd backend
+npm run dev
+
+```
+
+### 4️⃣ Start the Frontend
+
+```bash
+cd frontend
 npm Start
 
 ```
+
+Your app should now be running at http://localhost:3000 with data coming from MongoDB 🚀.
